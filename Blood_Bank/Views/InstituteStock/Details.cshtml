@@ -1,0 +1,42 @@
+﻿@model Blood_Bank.Models.Institute_Blood_Bank_stock
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Institute_Blood_Bank_stock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.blood_bag_qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blood_bag_qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blood_group.blood_group_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blood_group.blood_group_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rel_institute_city.inst_branch_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rel_institute_city.inst_branch_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.stock_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

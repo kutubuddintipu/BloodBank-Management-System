@@ -1,0 +1,104 @@
+﻿@model Blood_Bank.Models.Donor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Donor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.donor_reg_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor_reg_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donor_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donor_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donor_birth_day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor_birth_day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_donate_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_donate_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donation_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donation_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blood_group.blood_group_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blood_group.blood_group_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.city_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.city_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

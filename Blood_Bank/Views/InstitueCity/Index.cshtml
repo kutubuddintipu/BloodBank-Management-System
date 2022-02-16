@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Blood_Bank.Models.rel_institute_city>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    @Html.ActionLink("Create New", "Create")
+</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_contact_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_emergency_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_manager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_manager_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inst_branch_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City.city_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_contact_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_emergency_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_manager)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_manager_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inst_branch_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City.city_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.rel_institute_city_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.rel_institute_city_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.rel_institute_city_id })
+        </td>
+    </tr>
+}
+
+</table>

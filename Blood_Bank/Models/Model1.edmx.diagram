@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d194ae33154443ab9c6be3b9c090a0ff" Name="Diagram1">
+        <EntityTypeShape EntityType="BloodBankModel.Blood_group" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.City" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.Donor" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.Institute_Blood_Bank_stock" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.patient" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.rel_institute_city" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BloodBankModel.FK_Donor_Blood_group" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_Institute_Blood_Bank_stock_Blood_group" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_patient_Blood_group" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_Donor_City" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_rel_institute_city_City" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_Institute_Blood_Bank_stock_rel_institute_city" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BloodBankModel.tbl_Role" Width="1.5" PointX="8.625" PointY="0.875" />
+        <EntityTypeShape EntityType="BloodBankModel.tbl_user" Width="1.5" PointX="6.375" PointY="0.875" />
+        <AssociationConnector Association="BloodBankModel.FK__tbl_Role__UserID__4BAC3F29" />
+        <EntityTypeShape EntityType="BloodBankModel.BloodRequest" Width="1.5" PointX="3" PointY="17.125" />
+        <AssociationConnector Association="BloodBankModel.FK_BloodRequest_Blood_group" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Blood Bank</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar-fixed-top" style="color:white; background-color: #FF0018">
+        <div class="container">
+            <div class="navbar-header">
+               
+                @Html.ActionLink("Blood Bank Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Donor List", "Index", "Donor")</li>
+                        <li>@Html.ActionLink("Patient List", "Index", "Patient")</li>
+                        <li>@Html.ActionLink("Blood Stock", "Index", "InstituteStock")</li>
+                        <li>@Html.ActionLink("Instute", "Index", "institueCity")</li>
+                        <li>@Html.ActionLink("Request Blood", "Create", "BloodRequest")</li>
+                        <li>Hi,@User.Identity.Name</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Register")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Register")</li>
+                        <li>@Html.ActionLink("Signup", "Signup", "Register")</li>
+                    }
+
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div>
+        @RenderBody()    
+        <footer style="background-color: #FF0018; color:white; text-align:center; left:0;bottom:0; height:50px; width:100%;">
+            <p>Blood Bank Management System</p>
+            <p>&copy; @DateTime.Now.Year -Tipu Sultan</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

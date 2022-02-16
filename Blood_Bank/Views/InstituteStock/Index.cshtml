@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Blood_Bank.Models.Institute_Blood_Bank_stock>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.blood_bag_qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Blood_group.blood_group_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rel_institute_city.inst_branch_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.blood_bag_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Blood_group.blood_group_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rel_institute_city.inst_branch_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.stock_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.stock_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.stock_id })
+        </td>
+    </tr>
+}
+
+</table>

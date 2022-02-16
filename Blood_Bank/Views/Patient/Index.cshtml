@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Blood_Bank.Models.patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    @Html.ActionLink("Create New", "Create")
+</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_mbl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_birth_day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patient_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Blood_group.blood_group_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.patient_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patient_mbl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patient_birth_day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patient_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Blood_group.blood_group_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.patient_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.patient_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.patient_id })
+        </td>
+    </tr>
+}
+
+</table>
